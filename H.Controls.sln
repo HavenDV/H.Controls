@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31815.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{54DF06FE-E35B-4AB1-A2CF-0CCA939BE3A2}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		src\Directory.Build.props = src\Directory.Build.props
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "apps", "apps", "{3F73BAB7-9472-406D-8B95-9F5D194D739F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{D4AC71E3-4EBD-4658-B578-DCF990827B1C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9C09F210-B181-46FB-857E-5C6DE35F9CD5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "H.Controls.Wpf", "src\libs\H.Controls.Wpf\H.Controls.Wpf.csproj", "{A7A08496-0F78-438E-8923-F161F1EFA0D2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "H.Controls.Apps.Wpf", "src\apps\H.Controls.Apps.Wpf\H.Controls.Apps.Wpf.csproj", "{2BF724D4-36C5-4888-9206-67F5B3071384}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7A08496-0F78-438E-8923-F161F1EFA0D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7A08496-0F78-438E-8923-F161F1EFA0D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7A08496-0F78-438E-8923-F161F1EFA0D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7A08496-0F78-438E-8923-F161F1EFA0D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BF724D4-36C5-4888-9206-67F5B3071384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BF724D4-36C5-4888-9206-67F5B3071384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BF724D4-36C5-4888-9206-67F5B3071384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BF724D4-36C5-4888-9206-67F5B3071384}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A7A08496-0F78-438E-8923-F161F1EFA0D2} = {D4AC71E3-4EBD-4658-B578-DCF990827B1C}
+		{2BF724D4-36C5-4888-9206-67F5B3071384} = {3F73BAB7-9472-406D-8B95-9F5D194D739F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {32E687D3-028C-444A-B14B-6F2FCC22F0A3}
+	EndGlobalSection
+EndGlobal
