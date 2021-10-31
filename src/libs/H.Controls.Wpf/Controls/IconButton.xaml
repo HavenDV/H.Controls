@@ -1,0 +1,9 @@
+﻿<h:IconButton
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:h="clr-namespace:H.Controls"
+    Icon="Tea"
+    >
+    <h:IconButton.Resources>
+        <ResourceDictionary Source="../Styles/Controls/IconButton.xaml" />
+    </h:IconButton.Resources>
+</h:IconButton>

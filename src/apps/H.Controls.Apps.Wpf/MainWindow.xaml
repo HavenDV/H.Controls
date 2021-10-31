@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:h="clr-namespace:H.Controls;assembly=H.Controls.Wpf"
     mc:Ignorable="d"
     Title="H.Controls.Apps.Wpf"
     TextElement.FontSize="18"
@@ -15,4 +16,5 @@
     Width="800"
     Height="600"
     >
+    <h:NavigationView/>
 </Window>

@@ -1,0 +1,13 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+    <!-- https://stackoverflow.com/questions/47391020/cannot-find-source-for-binding-with-reference-relativesource-findancestor -->
+    <Style 
+        x:Key="BugFreeListViewItem"
+        TargetType="{x:Type ListViewItem}"
+        >
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Top"/>
+    </Style>
+</ResourceDictionary>
