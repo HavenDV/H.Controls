@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.ComponentModel;
+using System.Windows.Input;
 
 namespace H.Controls;
 
@@ -37,6 +38,18 @@ public partial class NavigationView : HeaderedContentControl
         typeof(NavigationView),
         new PropertyMetadata(false, OnIsExpandedPropertyChanged));
 
+    public static readonly DependencyProperty ExpandCommandProperty = DependencyProperty.Register(
+        nameof(ExpandCommand),
+        typeof(ICommand),
+        typeof(NavigationView),
+        new PropertyMetadata(null));
+
+    public static readonly DependencyProperty CollapseCommandProperty = DependencyProperty.Register(
+        nameof(CollapseCommand),
+        typeof(ICommand),
+        typeof(NavigationView),
+        new PropertyMetadata(null));
+
     private static void OnIsExpandedPropertyChanged(
         DependencyObject element, 
         DependencyPropertyChangedEventArgs args)
@@ -54,6 +67,12 @@ public partial class NavigationView : HeaderedContentControl
             frameworkElement, 
             isExpanded ? "Expanded" : "Collapsed", 
             true);
+    }
+
+    public NavigationView()
+    {
+        ExpandCommand = new ExpandCollapseCommand(this, true);
+        CollapseCommand = new ExpandCollapseCommand(this, false);
     }
 
     #endregion
@@ -90,6 +109,22 @@ public partial class NavigationView : HeaderedContentControl
     {
         get => (bool)GetValue(IsExpandedProperty);
         set => SetValue(IsExpandedProperty, value);
+    }
+
+    [Bindable(true)]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public ICommand ExpandCommand
+    {
+        get => (ICommand)GetValue(ExpandCommandProperty);
+        set => SetValue(ExpandCommandProperty, value);
+    }
+
+    [Bindable(true)]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public ICommand CollapseCommand
+    {
+        get => (ICommand)GetValue(CollapseCommandProperty);
+        set => SetValue(CollapseCommandProperty, value);
     }
 
     #endregion
