@@ -31,6 +31,31 @@ public partial class NavigationView : HeaderedContentControl
         typeof(NavigationView),
         new PropertyMetadata(null));
 
+    public static readonly DependencyProperty IsExpandedProperty = DependencyProperty.Register(
+        nameof(IsExpanded),
+        typeof(bool),
+        typeof(NavigationView),
+        new PropertyMetadata(false, OnIsExpandedPropertyChanged));
+
+    private static void OnIsExpandedPropertyChanged(
+        DependencyObject element, 
+        DependencyPropertyChangedEventArgs args)
+    {
+        if (element is not FrameworkElement frameworkElement)
+        {
+            throw new ArgumentException($"Element should be {nameof(FrameworkElement)}.");
+        }
+        if (args.NewValue is not bool isExpanded)
+        {
+            throw new ArgumentException($"Value should be {nameof(Boolean)}.");
+        }
+
+        _ = VisualStateManager.GoToState(
+            frameworkElement, 
+            isExpanded ? "Expanded" : "Collapsed", 
+            true);
+    }
+
     #endregion
 
     #region Properties
@@ -57,6 +82,14 @@ public partial class NavigationView : HeaderedContentControl
     public object? SelectedItem {
         get => GetValue(SelectedItemProperty);
         set => SetValue(SelectedItemProperty, value);
+    }
+
+    [Bindable(true)]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool IsExpanded
+    {
+        get => (bool)GetValue(IsExpandedProperty);
+        set => SetValue(IsExpandedProperty, value);
     }
 
     #endregion
